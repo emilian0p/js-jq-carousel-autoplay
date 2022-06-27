@@ -91,3 +91,35 @@ next.addEventListener('click', function () {
         secondContainer.children[index].firstChild.classList.add('d-block');
     }
 });
+
+
+
+let i = 1; 
+
+const timeout = setInterval(function(){
+    index++;
+    if (index == images.length) {
+        index = 0;
+        container.children[images.length - 1].classList.remove('d-block');
+        container.children[images.length - 1].classList.add('d-none');
+        container.children[index].classList.remove('d-none');
+        container.children[index].classList.add('d-block');
+
+        dotContainer.children[images.length - 1].firstChild.classList.remove('d-block');
+        dotContainer.children[images.length - 1].firstChild.classList.add('d-none');
+        dotContainer.children[index].firstChild.classList.remove('d-none');
+        dotContainer.children[index].firstChild.classList.add('d-block');
+    } else {
+        container.children[index - 1].classList.remove('d-block');
+        container.children[index - 1].classList.add('d-none');
+        container.children[index].classList.remove('d-none');
+        container.children[index].classList.add('d-block');
+
+        dotContainer.children[index - 1].firstChild.classList.remove('d-block');
+        dotContainer.children[index - 1].firstChild.classList.add('d-none');
+        dotContainer.children[index].firstChild.classList.remove('d-none');
+        dotContainer.children[index].firstChild.classList.add('d-block');
+    }
+}, 3000);
+
+
